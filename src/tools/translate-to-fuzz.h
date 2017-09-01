@@ -294,6 +294,7 @@ private:
     // export some, but not all (to allow inlining etc.). make sure to
     // export at least one, though, to keep each testcase interesting
     if (num == 0 || oneIn(2)) {
+      func->type = ensureFunctionType(getSig(func), &wasm)->name;
       auto* export_ = new Export;
       export_->name = func->name;
       export_->value = func->name;

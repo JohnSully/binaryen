@@ -1,8 +1,14 @@
 (module
  (type $FUNCSIG$i (func (result i32)))
+ (type $FUNCSIG$ifd (func (param f32 f64) (result i32)))
+ (type $FUNCSIG$j (func (result i64)))
+ (type $FUNCSIG$d (func (result f64)))
+ (type $FUNCSIG$fdd (func (param f64 f64) (result f32)))
+ (type $FUNCSIG$ji (func (param i32) (result i64)))
  (type $FUNCSIG$dd (func (param f64) (result f64)))
- (type $FUNCSIG$v (func))
  (type $FUNCSIG$df (func (param f32) (result f64)))
+ (type $FUNCSIG$v (func))
+ (type $FUNCSIG$djf (func (param i64 f32) (result f64)))
  (global $hangLimit (mut i32) (i32.const 100))
  (table 10 anyfunc)
  (elem (i32.const 0) $func_0 $func_0 $func_1 $func_4 $func_5 $func_5 $func_8 $func_11 $func_15 $func_17)
@@ -21,7 +27,7 @@
  (export "func_19" (func $func_19))
  (export "func_21" (func $func_21))
  (export "hangLimitInitializer" (func $hangLimitInitializer))
- (func $func_0 (result i32)
+ (func $func_0 (type $FUNCSIG$i) (result i32)
   (local $0 f32)
   (local $1 i64)
   (local $2 f32)
@@ -85,7 +91,7 @@
    )
   )
  )
- (func $func_1 (param $0 f32) (param $1 f64) (result i32)
+ (func $func_1 (type $FUNCSIG$ifd) (param $0 f32) (param $1 f64) (result i32)
   (block
    (if
     (i32.eqz
@@ -108,7 +114,7 @@
    )
   )
  )
- (func $func_2 (result i64)
+ (func $func_2 (type $FUNCSIG$j) (result i64)
   (block
    (if
     (i32.eqz
@@ -131,7 +137,7 @@
    )
   )
  )
- (func $func_3 (result f64)
+ (func $func_3 (type $FUNCSIG$d) (result f64)
   (local $0 i64)
   (local $1 i64)
   (local $2 f64)
@@ -238,7 +244,7 @@
    )
   )
  )
- (func $func_4 (param $0 f64) (param $1 f64) (result f32)
+ (func $func_4 (type $FUNCSIG$fdd) (param $0 f64) (param $1 f64) (result f32)
   (local $2 i64)
   (block
    (if
@@ -305,7 +311,7 @@
    )
   )
  )
- (func $func_6 (param $0 i32) (result i64)
+ (func $func_6 (type $FUNCSIG$ji) (param $0 i32) (result i64)
   (local $1 f64)
   (block
    (if
@@ -381,7 +387,7 @@
    (call $func_2)
   )
  )
- (func $func_9 (result f64)
+ (func $func_9 (type $FUNCSIG$d) (result f64)
   (local $0 i64)
   (local $1 i64)
   (local $2 f32)
@@ -647,7 +653,7 @@
    )
   )
  )
- (func $func_13 (result i32)
+ (func $func_13 (type $FUNCSIG$i) (result i32)
   (local $0 f32)
   (local $1 i32)
   (block
@@ -761,7 +767,7 @@
    )
   )
  )
- (func $func_15 (result i64)
+ (func $func_15 (type $FUNCSIG$j) (result i64)
   (block
    (if
     (i32.eqz
@@ -806,7 +812,7 @@
    )
   )
  )
- (func $func_17 (param $0 f32) (result f64)
+ (func $func_17 (type $FUNCSIG$df) (param $0 f32) (result f64)
   (local $1 f64)
   (local $2 f64)
   (block
@@ -827,7 +833,7 @@
   )
   (call $func_7)
  )
- (func $func_18 (result i64)
+ (func $func_18 (type $FUNCSIG$j) (result i64)
   (local $0 f32)
   (local $1 i32)
   (block
@@ -852,7 +858,7 @@
    )
   )
  )
- (func $func_19
+ (func $func_19 (type $FUNCSIG$v)
   (block
    (if
     (i32.eqz
@@ -896,7 +902,7 @@
    )
   )
  )
- (func $func_21 (param $0 i64) (param $1 f32) (result f64)
+ (func $func_21 (type $FUNCSIG$djf) (param $0 i64) (param $1 f32) (result f64)
   (local $2 i64)
   (block
    (if
