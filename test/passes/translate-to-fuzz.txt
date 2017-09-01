@@ -286,7 +286,7 @@
    )
   )
  )
- (func $func_5 (param $0 f64) (result f64)
+ (func $func_5 (type $FUNCSIG$dd) (param $0 f64) (result f64)
   (local $1 f64)
   (local $2 i64)
   (block
@@ -360,7 +360,7 @@
    )
   )
  )
- (func $func_8
+ (func $func_8 (type $FUNCSIG$v)
   (local $0 f32)
   (local $1 i64)
   (local $2 f64)
@@ -449,7 +449,7 @@
    )
   )
  )
- (func $func_11 (result i32)
+ (func $func_11 (type $FUNCSIG$i) (result i32)
   (block
    (if
     (i32.eqz

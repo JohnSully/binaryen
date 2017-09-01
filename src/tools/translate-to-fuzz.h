@@ -696,10 +696,12 @@ private:
     for (auto type : func->params) {
       args.push_back(make(type));
     }
+    func->type = ensureFunctionType(getSig(func), &wasm)->name;
     return builder.makeCallIndirect(
-      ensureFunctionType(getSig(func), &wasm),
+      func->type,
       target,
-      args
+      args,
+      func->result
     );
   }
 
