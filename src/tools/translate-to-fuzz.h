@@ -19,6 +19,13 @@
 // This is helpful for fuzzing.
 //
 
+/*
+memory too
+high chance for set at start of loop
+  high chance of get of a set local in the scope of that scope
+    high chance of a tee in that case => loop var
+*/
+
 #include <wasm-builder.h>
 
 namespace wasm {
